@@ -1,0 +1,53 @@
+extends ../layout
+
+block content
+  .container
+    h2 搜尋關鍵字: #{key}
+    p The result of your search! 
+    p(style='float:right;') 搜尋結果 : #{jsonCount} 筆資料
+    table.table.table-hover
+      thead
+        tr
+          //- th Id
+          //- th cateId
+          th 照片
+          th 項目
+          //- th picB
+          th 描述
+          th 價格
+          th 追蹤
+      tbody
+      each item in jsonData
+        tr
+          //- td.pid #{item.Id}
+          //- td #{item.cateId}
+          td
+            a(href="http://24h.pchome.com.tw/prod/#{item.Id}", target="blank")
+              img(src="http://a.ecimg.tw#{item.picS}")
+          td 
+            a(href="http://24h.pchome.com.tw/prod/#{item.Id}", target="blank") #{item.name}
+          //- td
+          //-   a(href="http://24h.pchome.com.tw/prod/#{item.Id}", target="blank")
+          //-     img(src="http://a.ecimg.tw#{item.picB}", width="50%") 
+          td #{item.describe}
+          td #{item.price}
+          td
+            if user
+              button.btn.btn-primary(type='button' onclick='track(this)' data-pid='#{item.Id}' data-price='#{item.price}' data-name='#{item.name}' data-pic='#{item.picS}' data-uid='#{user._id}' data-umail='#{user.email}' style='width:80px') Track
+            else
+              button.btn.btn-primary(type='button' onclick='track(this)' data-pid='#{item.Id}' data-price='#{item.price}' data-name='#{item.name}' data-pic='#{item.picS}' data-uid='nologin' data-umail='no' style='width:80px') Track
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+

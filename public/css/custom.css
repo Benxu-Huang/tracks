@@ -1,0 +1,70 @@
+
+
+.margin-top {
+  margin-top: 30px;
+}
+
+.margin-left {
+	margin-left: 5px;
+}
+
+/*=====================
+SIGN UP FORM
+=====================*/
+
+
+@media (max-width: 991px) {
+  .sign-up-form .form-control {
+    margin-bottom: 20px;
+  }
+  .sign-up-form .btn {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 768px) {
+  .sign-up-form .form-control {
+    width: 350px;
+  }
+}
+
+
+
+
+/*=====================
+INTRO
+=====================
+*/
+
+.text-intro {
+  text-align: center;
+  /*color: #ffffff;*/
+}
+.text-intro h1 {
+  font-weight: 700;
+}
+.text-intro a {
+  /*color: #fff;*/
+  text-decoration: underline;
+}
+.text-intro h1,
+.text-intro h2,
+.text-intro h3,
+.text-intro h4 {
+  /*color: #ffffff;*/
+}
+.text-intro span {
+  /*color: #ff7473;*/
+}
+@media (min-width: 1200px) {
+  .text-intro {
+    /*background-image: -webkit-linear-gradient(left, color-stop(#ff7473 0%), color-stop(#46426f 60%));
+    background-image: linear-gradient(to right, #ff7473 0%, #46426f 60%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff7473', endColorstr='#ff46426f', GradientType=1);*/
+  }
+}
+@media (max-width: 1199px) {
+  .text-intro {
+    /*background: #46426f;*/
+  }
+}

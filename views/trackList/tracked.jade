@@ -1,0 +1,52 @@
+extends ../layout
+
+block content
+  .container
+    h2 #{title}
+    p 您的追蹤項目！
+    //- p(style='float:right;') Total Count : #{jsonCount}
+    table.table.table-hover
+      thead
+        tr
+          th
+          //- th PID
+          //- th UID
+          th 項目
+          th 價格
+          th 是否追蹤
+          th 開始追蹤時間
+          th 價格更新時間
+          th
+      tbody
+      for item in Track
+        tr
+          td
+            a(href="http://24h.pchome.com.tw/prod/#{item.pid}", target="blank")
+              img(src="http://a.ecimg.tw#{item.pic}")
+          //- td.pid
+          //-   a(href="http://24h.pchome.com.tw/prod/#{item.pid}", target="blank")= item.pid
+          //- td.uid= item.uid
+          td.uid
+            a(href="http://24h.pchome.com.tw/prod/#{item.pid}", target="blank")
+              =item.name
+          td= item.price
+          td= item.track
+          td= item.CreateDate
+          td= item.UpdateDate
+          td
+            button.btn.btn-primary(type='button' onclick='deleteItem(this)' data-pid='#{item.pid}' data-name='#{item.name}' style='width:80px') 刪除
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
